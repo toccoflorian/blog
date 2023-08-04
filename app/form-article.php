@@ -19,7 +19,6 @@ $errors = [
     'category' => '',
     'content' => ''
 ];
-$category = '';
 
 
 $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -74,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!$content) {
         $errors['content'] = ERROR_REQUIRED;
-    } elseif (mb_strlen($content) < 50) {
+    } elseif (mb_strlen($content) < 30) {
         $errors['content'] = ERROR_CONTENT_TOO_SHORT;
     }
     # si pas d'erreur
@@ -106,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php require_once 'includes/header.php' ?>
         <div class="content">
             <div class="block p-20 form-container">
-                <h1><?= $id ? 'Modifier' : 'Écrire' ?> un article</h1>
+                <h1><?= $id ? 'Modifier' : 'Éditer' ?> un article</h1>
                 <form action="/form-article.php<?= $id ? "?id=$id" : '' ?>" , method="POST">
                     <div class="form-control">
                         <label for="title">Titre</label>
@@ -116,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <?php endif; ?>
                     </div>
                     <div class="form-control">
-                        <label for="image">Image</label>
+                        <label for="image">Image <p style="font-size: 10px;">(merci de coller l'URL d'une image)</p></label>
                         <input type="text" name="image" id="image" value="<?= $article['image'] ?? '' ?>">
                         <?php if ($errors['image']) : ?>
                             <p class="text-danger"><?= $errors['image'] ?></p>
@@ -126,8 +125,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label for="category">Catégorie</label>
                         <select name="category" id="category">
                             <option <?= !isset($article['category']) || $article['category'] === 'Technologie' ? 'selected' : '' ?> value="Technologie">Technologie</option>
+                            <option <?= isset($article['category']) && $article['category'] === 'Travail' ? 'selected' : '' ?> value="Travail">Travail</option>
+                            <option <?= isset($article['category']) && $article['category'] === 'Société' ? 'selected' : '' ?> value="Société">Société</option>
+                            <option <?= isset($article['category']) && $article['category'] === 'Evénements' ? 'selected' : '' ?> value="Evénements">Evénements</option>
                             <option <?= isset($article['category']) && $article['category'] === 'Nature' ? 'selected' : '' ?> value="Nature">Nature</option>
-                            <option <?= isset($article['category']) && $article['category'] === 'Politique' ? 'selected' : '' ?> value="Politique">Politique</option>
+                            <option <?= isset($article['category']) && $article['category'] === 'Sport' ? 'selected' : '' ?> value="Sport">Sport</option>
+                            <option <?= isset($article['category']) && $article['category'] === 'Musique' ? 'selected' : '' ?> value="Musique">Musique</option>
+                            <option <?= isset($article['category']) && $article['category'] === 'Divers' ? 'selected' : '' ?> value="Divers">Divers</option>
                         </select>
                         <?php if ($errors['category']) : ?>
                             <p class="text-danger"><?= $errors['category'] ?></p>

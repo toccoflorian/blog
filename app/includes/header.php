@@ -7,7 +7,7 @@
     <ul class="header-menu">
         <?php if ($AuthDB->islogged()) : ?>
             <li class=<?= $_SERVER['REQUEST_URI'] === '/form-article.php' ? 'active' : '' ?>>
-                <a href="/form-article.php">Écrire un article</a>
+                <a href="/form-article.php">Éditer un article</a>
             </li>
             <li class=<?= $_SERVER['REQUEST_URI'] === '/form-article.php' ? 'active' : '' ?>>
                 <a href="/profile.php">Profil</a>
@@ -20,7 +20,7 @@
                 <a href="/auth-login.php">Connexion</a>
             </li>
             <li class=<?= $_SERVER['REQUEST_URI'] === '/form-article.php' ? 'active' : '' ?>>
-                <a href="/auth-register.php">Enregistrement</a>
+                <a href="/auth-register.php">Inscription</a>
             </li>
         <?php endif ?>
     </ul>
@@ -34,7 +34,7 @@
             <?php if ($AuthDB->islogged()) : ?>
                 <div class="separateur"></div>
                 <li class=<?= $_SERVER['REQUEST_URI'] === '/form-article.php' ? 'active' : '' ?>>
-                    <a href="/form-article.php">Écrire un article</a>
+                    <a href="/form-article.php">Éditer un article</a>
                 </li>
                 <div class="separateur"></div>
                 <li class=<?= $_SERVER['REQUEST_URI'] === '/form-article.php' ? 'active' : '' ?>>
@@ -53,7 +53,7 @@
                 </li>
                 <div class="separateur"></div>
                 <li class=<?= $_SERVER['REQUEST_URI'] === '/form-article.php' ? 'active' : '' ?>>
-                    <a href="/auth-register.php">Enregistrement</a>
+                    <a href="/auth-register.php">Inscription</a>
                 </li>
             <?php endif ?>
         </ul>
