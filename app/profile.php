@@ -42,7 +42,7 @@ $articlePerCategories = array_reduce($articlesByAuthor, function ($acc, $article
     <div class="container">
         <?php require_once 'includes/header.php' ?>
         <h1>Mes articles</h1>
-        <p><?= $currentUser['firstname'] . ' ' . $currentUser['lastname'] . ' ' . $currentUser['email'] ?></p>
+        <p><?= $currentUser['firstname'] . ' ' . $currentUser['lastname'] . ' <br> ' . $currentUser['email'] ?></p>
 
         <div class="content">
 
