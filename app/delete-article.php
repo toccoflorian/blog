@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/database/database.php';
-$AuthDB = require_once 'database/security.php';
+$AuthDB = require_once __DIR__ . 'database/security.php';
 if (!$AuthDB->islogged()) {
     header('location:auth-login.php');
 }
