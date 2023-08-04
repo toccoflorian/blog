@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/database/database.php';
-$AuthDB = require_once __DIR__ . 'database/security.php';
+require_once __DIR__ . '/app/database/database.php';
+$AuthDB = require_once __DIR__ . 'app/database/security.php';
 $currentUser = $AuthDB->islogged();
 $articleDB = require_once __DIR__ . '/database/models/articleDB.php';
 $articles = $articleDB->fetchAll();

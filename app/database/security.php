@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/database.php';
+require_once __DIR__ . '/app/database.php';
 
 class AuthDB
 {

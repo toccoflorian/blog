@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . '/database/database.php';
-$AuthDB = require_once __DIR__ . 'database/security.php';
+require_once __DIR__ . '/app/database/database.php';
+$AuthDB = require_once __DIR__ . 'app/database/security.php';
 
 const ERROR_REQUIRED = 'Veuillez renseigner ce champ';
 const ERROR_INVALID_EMAIL = 'L\'email n\'est pas valide';
