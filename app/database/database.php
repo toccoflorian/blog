@@ -1,8 +1,10 @@
 <?php
 
 $dsn = 'mysql:host=127.0.0.1;dbname=blog2';
-$dbUser = getenv('DB_USER');
-$mdp = getenv('DB_PWD');
+$dbUser = 'root';
+$mdp = '45222254';
+// $dbUser = getenv('DB_USER');
+// $mdp = getenv('DB_PWD');
 
 try {
     $pdo = new PDO($dsn, $dbUser, $mdp, [
