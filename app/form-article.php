@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <?php endif; ?>
                     </div>
                     <div class="form-control">
-                        <label for="image">Image <p style="font-size: 10px;">( merci de coller l'URL d'une image s)</p></label>
+                        <label for="image">Image <p style="font-size: 10px;">( merci de coller l'URL d'une image )</p></label>
                         <input type="text" name="image" id="image" value="<?= $article['image'] ?? '' ?>">
                         <?php if ($errors['image']) : ?>
                             <p class="text-danger"><?= $errors['image'] ?></p>
