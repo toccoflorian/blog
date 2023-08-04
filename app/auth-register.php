@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty(array_filter($error, fn ($e) => $e !== ''))) {
         $AuthDB->register([
             'firstname' => $firstname,
-            'lastname' => $firstlastnamename,
+            'lastname' => $lastname,
             'email' => $email,
             'password' => $password,
         ]);
