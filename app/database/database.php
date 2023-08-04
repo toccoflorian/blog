@@ -1,6 +1,6 @@
 <?php
 
-$dsn = 'mysql:host=127.0.0.1;dbname=blog2';
+$dsn = 'mysql:host=164.132.229.216;dbname=blog2';
 $dbUser = 'root';
 $mdp = '45222254';
 // $dbUser = getenv('DB_USER');
