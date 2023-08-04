@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/app/database/database.php';
-$AuthDB = require_once __DIR__ . 'app/database/security.php';
+require_once __DIR__ . '/database/database.php';
+$AuthDB = require_once __DIR__ . '/database/security.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
