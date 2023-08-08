@@ -59,7 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'email' => $email,
             'password' => $password,
         ]);
-        header('location:auth-login.php');
+        $AuthDB->login($email, $password);
+        header('location:profile.php');
     }
 }
 
