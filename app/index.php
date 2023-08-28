@@ -29,11 +29,8 @@ if ($articles) {
         }
         return $acc;
     }, []);
-}
-
-
+};
 ?>
-
 
 
 <!DOCTYPE html>
