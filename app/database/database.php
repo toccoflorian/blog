@@ -2,7 +2,7 @@
 
 $dsn = 'mysql:host=164.132.229.216;dbname=blog2';
 $dbUser = 'root';
-$mdp = 'kv?urskE254e!jef@z55<>822d';
+$mdp = '';
 // $dbUser = getenv('DB_USER');
 // $mdp = getenv('DB_PWD');
 
