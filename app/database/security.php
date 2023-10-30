@@ -10,7 +10,7 @@ class AuthDB
     }
     function login(string $email, string $password): void
     {
-        $statementUser = $this->pdo->prepare('SELECT * FROM user WHERE email=:email');
+        $statementUser = $this->pdo->prepare('SELECT * FROM users WHERE email=:email');
         $statementUser->bindValue(':email', $email);
         $statementUser->execute();
         $user = $statementUser->fetch();
@@ -19,7 +19,7 @@ class AuthDB
         } elseif (!password_verify($password, $user['password'])) {
             $error['password'] = ERROR_INVALID_PASSWORD;
         } else {
-            $statementSession = $this->pdo->prepare('INSERT INTO session VALUES(
+            $statementSession = $this->pdo->prepare('INSERT INTO sessions VALUES(
                 :id,
                 :userid
                 
@@ -37,7 +37,7 @@ class AuthDB
     function logout(): void
     {
         $sessionId = $_COOKIE['session'] ?? '';
-        $statement = $this->pdo->prepare('DELETE FROM session Where id=:userid');
+        $statement = $this->pdo->prepare('DELETE FROM sessions Where id=:userid');
         $statement->bindValue(':userid', $sessionId);
         $statement->execute();
         setcookie('session', '', time() - 1);
@@ -46,7 +46,7 @@ class AuthDB
     }
     function register(array $user): void
     {
-        $statement = $this->pdo->prepare('INSERT INTO user VALUES (
+        $statement = $this->pdo->prepare('INSERT INTO users VALUES (
             DEFAULT,
             :firstname,
             :lastname,
@@ -62,7 +62,7 @@ class AuthDB
     function islogged(): array | false
     {
         $sessionId = $_COOKIE['session'] ?? '';
-        $statement = $this->pdo->prepare('SELECT * FROM session WHERE id=:sessionid');
+        $statement = $this->pdo->prepare('SELECT * FROM sessions WHERE id=:sessionid');
         $statement->bindValue(':sessionid', $sessionId);
         $statement->execute();
         $session = $statement->fetch();
@@ -70,7 +70,7 @@ class AuthDB
             $signature = $_COOKIE['signature'] ?? '';
             $verifyingSignature = hash_hmac('sha256', $sessionId, 'lekkjdjzeozdjezojdlezkzefredozedozdzdkezffz');
             if ($signature === $verifyingSignature) {
-                $statementUser = $this->pdo->prepare('SELECT * FROM user WHERE id=:userid');
+                $statementUser = $this->pdo->prepare('SELECT * FROM users WHERE id=:userid');
                 $statementUser->bindValue(':userid', $session['iduser']);
                 $statementUser->execute();
                 return $statementUser->fetch();

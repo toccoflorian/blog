@@ -15,8 +15,8 @@ class Article
     # constructeur
     function __construct(private PDO $pdo)
     {
-        $this->statementreadOne = $pdo->prepare('SELECT articles.*, user.firstname, user.lastname FROM articles LEFT JOIN user ON articles.author=user.id WHERE articles.id=:id');
-        $this->statementreadAll = $pdo->prepare('SELECT articles.*, user.firstname, user.lastname FROM articles LEFT JOIN user ON articles.author=user.id ');
+        $this->statementreadOne = $pdo->prepare('SELECT articles.*, users.firstname, users.lastname FROM articles LEFT JOIN users ON articles.author=users.id WHERE articles.id=:id');
+        $this->statementreadAll = $pdo->prepare('SELECT articles.*, users.firstname, users.lastname FROM articles LEFT JOIN users ON articles.author=users.id ');
         $this->statementreadAllByAuthor = $pdo->prepare('SELECT * FROM articles WHERE author=:idauthor');
         $this->statementcreateOne = $pdo->prepare(
             'INSERT INTO articles (
