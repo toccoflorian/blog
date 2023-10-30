@@ -6,15 +6,15 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $dsn = "mysql:host=164.132.229.216;dbname=blogPHP";
-$dbUser = getenv("DBuser");
-$mdp = getenv("DBmdp");
+$dbUser = explode("=", $_ENV["DBuser"], 2);
+$mdp = explode("=", $_ENV["DBmdp"], 2);
 // $dbUser = getenv('DB_USER');
 // $mdp = getenv('DB_PWD');
 
 
 
 try {
-    $pdo = new PDO($dsn, $dbUser, $mdp, [
+    $pdo = new PDO($dsn, $dbUser[0], $mdp[0], [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
