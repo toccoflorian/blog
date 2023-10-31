@@ -7,20 +7,20 @@
     <ul class="header-menu">
         <?php if ($AuthDB->islogged()) : ?>
             <li class=<?= $_SERVER['REQUEST_URI'] === '/form-article.php' ? 'active' : '' ?>>
-                <a href="/form-article.php">Éditer un article</a>
+                <a href="/blog/form-article.php">Éditer un article</a>
             </li>
             <li class=<?= $_SERVER['REQUEST_URI'] === '/form-article.php' ? 'active' : '' ?>>
-                <a href="/profile.php">Profil</a>
+                <a href="/blog/profile.php">Profil</a>
             </li>
             <li class=<?= $_SERVER['REQUEST_URI'] === '/form-article.php' ? 'active' : '' ?>>
-                <a href="/auth-logout.php">Deconnexion</a>
+                <a href="/blog/auth-logout.php">Deconnexion</a>
             </li>
         <?php else : ?>
             <li class=<?= $_SERVER['REQUEST_URI'] === '/form-article.php' ? 'active' : '' ?>>
-                <a href="/auth-login.php">Connexion</a>
+                <a href="/blog/auth-login.php">Connexion</a>
             </li>
             <li class=<?= $_SERVER['REQUEST_URI'] === '/form-article.php' ? 'active' : '' ?>>
-                <a href="/auth-register.php">Inscription</a>
+                <a href="/blog/auth-register.php">Inscription</a>
             </li>
         <?php endif ?>
     </ul>
