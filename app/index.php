@@ -93,7 +93,7 @@ if ($articles) {
 
                             <?php foreach ($articlePerCategories[$selectedCat] as $a) : ?>
 
-                                <a href="/show-article.php?id=<?= $a['id'] ?>" class="article block">
+                                <a href="/blog/show-article.php?id=<?= $a['id'] ?>" class="article block">
                                     <div class="overflow">
                                         <div class="img-container" style="background-image:url(<?= $a['image'] ?>"></div>
                                     </div>

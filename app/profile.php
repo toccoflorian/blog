@@ -34,7 +34,7 @@ $articlePerCategories = array_reduce($articlesByAuthor, function ($acc, $article
 
 <head>
     <?php require_once 'includes/head.php' ?>
-    <link rel="stylesheet" href="/public/css/profile.css">
+    <link rel="stylesheet" href="/blog/public/css/profile.css">
     <title>Profil</title>
 </head>
 
@@ -48,9 +48,9 @@ $articlePerCategories = array_reduce($articlesByAuthor, function ($acc, $article
 
             <div class="newsfeed-container">
                 <ul class="category-container">
-                    <li class=<?= $selectedCat ? '' : 'cat-active' ?>><a href="/">Tous les articles <span class="small">(<?= count($articlesByAuthor) ?>)</span></a></li>
+                    <li class=<?= $selectedCat ? '' : 'cat-active' ?>><a href="/blog/">Tous les articles <span class="small">(<?= count($articlesByAuthor) ?>)</span></a></li>
                     <?php foreach ($categories as $catName => $catNum) : ?>
-                        <li class=<?= $selectedCat ===  $catName ? 'cat-active' : '' ?>><a href="/?cat=<?= $catName ?>"> <?= $catName ?><span class="small">(<?= $catNum ?>)</span> </a></li>
+                        <li class=<?= $selectedCat ===  $catName ? 'cat-active' : '' ?>><a href="/blog/?cat=<?= $catName ?>"> <?= $catName ?><span class="small">(<?= $catNum ?>)</span> </a></li>
                     <?php endforeach; ?>
                 </ul>
                 <div class="newsfeed-content">
@@ -59,7 +59,7 @@ $articlePerCategories = array_reduce($articlesByAuthor, function ($acc, $article
                             <h2><?= $cat ?></h2>
                             <div class="articles-container">
                                 <?php foreach ($articlePerCategories[$cat] as $a) : ?>
-                                    <a href="/show-article.php?id=<?= $a['id'] ?>" class="article block">
+                                    <a href="/blog/show-article.php?id=<?= $a['id'] ?>" class="article block">
                                         <div class="overflow">
                                             <div class="img-container" style="background-image:url(<?= $a['image'] ?>"></div>
                                         </div>
@@ -72,7 +72,7 @@ $articlePerCategories = array_reduce($articlesByAuthor, function ($acc, $article
                         <h2><?= $selectedCat ?></h2>
                         <div class="articles-container">
                             <?php foreach ($articlePerCategories[$selectedCat] as $a) : ?>
-                                <a href="/show-article.php?id=<?= $a['id'] ?>" class="article block">
+                                <a href="/blog/show-article.php?id=<?= $a['id'] ?>" class="article block">
                                     <div class="overflow">
                                         <div class="img-container" style="background-image:url(<?= $a['image'] ?>"></div>
                                     </div>

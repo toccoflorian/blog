@@ -30,7 +30,7 @@ if (!$id) {
         <?php require_once 'includes/header.php' ?>
         <div class="content">
             <div class="article-container">
-                <a class="article-back" href="/">Retour à la liste de tous articles</a>
+                <a class="article-back" href="/blog/">Retour à la liste de tous articles</a>
                 <?php if ($currentUser) : ?>
                     <a class="article-back" href="blog/profile.php">Mes articles</a>
                 <?php endif ?>
@@ -42,8 +42,8 @@ if (!$id) {
 
                 <div class="action">
                     <?php if ($currentUser && $currentUser['id'] === $article['author']) : ?>
-                        <a class="btn btn-secondary" href="/delete-article.php?id=<?= $article['id'] ?>">Supprimer</a>
-                        <a class="btn btn-primary" href="/form-article.php?id=<?= $article['id'] ?>">Editer l'article</a>
+                        <a class="btn btn-secondary" href="/blog/delete-article.php?id=<?= $article['id'] ?>">Supprimer</a>
+                        <a class="btn btn-primary" href="/blog/form-article.php?id=<?= $article['id'] ?>">Editer l'article</a>
                     <?php endif ?>
                 </div>
             </div>
