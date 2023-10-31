@@ -2,7 +2,7 @@
 
 ?>
 <header>
-    <a href="/" class="logo">Free Blog</a>
+    <a href="/blog/" class="logo">Free Blog</a>
 
     <ul class="header-menu">
         <?php if ($AuthDB->islogged()) : ?>
