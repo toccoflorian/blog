@@ -32,7 +32,7 @@ if (!$id) {
             <div class="article-container">
                 <a class="article-back" href="/blog/">Retour à la liste de tous articles</a>
                 <?php if ($currentUser) : ?>
-                    <a class="article-back" href="blog/profile.phpprofile.php">Mes articles</a>
+                    <a class="article-back" href="profile.php">Mes articles</a>
                 <?php endif ?>
                 <div class="article-cover-img" style="background-image:url(<?= $article['image'] ?>)"></div>
                 <h1 class="article-title"><?= $article['title'] ?></h1>
