@@ -44,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <head>
     <?php require_once 'includes/head.php' ?>
-    <link rel="stylesheet" href="/public/css/formulaire.css">
-    <link rel="stylesheet" href="/public/css/auth_login.css">
+    <link rel="stylesheet" href="/blog/public/css/formulaire.css">
+    <link rel="stylesheet" href="/blog/public/css/auth_login.css">
     <title>Connexion</title>
 </head>
 
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <!-- button -->
                     <div class="form-actions">
-                        <a href="/" class="btn btn-secondary" type="button">Annuler</a>
+                        <a href="/blog/" class="btn btn-secondary" type="button">Annuler</a>
                         <button class="btn btn-primary" type="submit">Connexion</button>
                     </div>
 
