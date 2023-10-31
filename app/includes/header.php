@@ -27,7 +27,7 @@
     <div class="mobile-menu">
         <div class="mobile-menu-icon">
 
-            <img src="..\public\img\mobile-menu.png" alt="">
+            <img src="public\img\mobile-menu.png" alt="">
 
         </div>
         <ul class="mobile-menu-item">
