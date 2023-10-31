@@ -10,7 +10,7 @@ $id = $_GET['id'] ?? '';
 $article = $articleDB->fetchOne($id);
 
 if (!$id) {
-    header('Location: /');
+    header('Location: /blog/');
 }
 
 ?>
