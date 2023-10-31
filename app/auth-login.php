@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <h1>Connexion</h1>
 
-                <form action="/auth-login.php" method="POST">
+                <form action="/blog/auth-login.php" method="POST">
 
                     <!-- email -->
                     <div class="form-control">
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
                     <!-- button -->
-                    <div class="form-actions">
+                    <div class="/blog/form-actions">
                         <a href="/blog/" class="btn btn-secondary" type="button">Annuler</a>
                         <button class="btn btn-primary" type="submit">Connexion</button>
                     </div>

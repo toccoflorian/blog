@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <h1>Inscription</h1>
 
-                <form action="/auth-register.php" method="POST">
+                <form action="/blog/auth-register.php" method="POST">
 
                     <!-- prenom -->
                     <div class="form-control">

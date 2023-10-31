@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="content">
             <div class="block p-20 form-container">
                 <h1><?= $id ? 'Modifier' : 'Éditer' ?> un article</h1>
-                <form action="/form-article.php<?= $id ? "?id=$id" : '' ?>" , method="POST">
+                <form action="/blog/form-article.php<?= $id ? "?id=$id" : '' ?>" , method="POST">
                     <div class="form-control">
                         <label for="title">Titre</label>
                         <input type="text" name="title" id="title" value="<?= $article['title'] ?? '' ?>">
@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <p class="text-danger"><?= $errors['content'] ?></p>
                         <?php endif; ?>
                     </div>
-                    <div class="form-actions">
+                    <div class="/blog/form-actions">
                         <a href="/blog/" class="btn btn-secondary" type="button">Annuler</a>
                         <button class="btn btn-primary" type="submit"><?= $id ? 'Modifier' : 'Sauvegarder' ?></button>
                     </div>
