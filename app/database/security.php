@@ -31,7 +31,7 @@ class AuthDB
             $statementSession->execute();
             setcookie('session', $sessionId, time() + 60 * 60 * 24 * 14, '', '', false, true);
             setcookie('signature', $sessionSignature, time() + 60 * 60 * 24 * 14, '', '', false, true);
-            header('location:profile.php');
+            header('location:blog/profile.php');
         }
     }
     function logout(): void
@@ -42,7 +42,7 @@ class AuthDB
         $statement->execute();
         setcookie('session', '', time() - 1);
         setcookie('signature', '', time() - 1);
-        header('location:/');
+        header('location:/blog/');
     }
     function register(array $user): void
     {

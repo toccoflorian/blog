@@ -3,7 +3,7 @@ require_once __DIR__ . '/database/database.php';
 $AuthDB = require_once __DIR__ . '/database/security.php';
 $currentUser = $AuthDB->islogged();
 if (!$currentUser) {
-    header('location:auth-login.php');
+    header('location:blog/auth-login.php');
 }
 $DBArticles = require_once __DIR__ . '/database/models/articleDB.php';
 $articlesByAuthor = $DBArticles->fetchAllByAuthor($currentUser['id']);
