@@ -45,6 +45,7 @@
 
 .img-container {
     height: 30rem;
+    background-position: center;
     background-size: cover;
     transition: transform 1s;
 }
