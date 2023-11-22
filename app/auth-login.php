@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty(array_filter($error, fn ($e) => $e !== ''))) {
 
         $AuthDB->login($email, $password);
-        header('location:blog/profile.php');
+        header('location:profile.php');
     }
 }
 
