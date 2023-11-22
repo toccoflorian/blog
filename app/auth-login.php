@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
                     <!-- button -->
-                    <div class="/blog/form-actions">
+                    <div class="form-actions">
                         <a href="/blog/" class="btn btn-secondary" type="button">Annuler</a>
                         <button class="btn btn-primary" type="submit">Connexion</button>
                     </div>
