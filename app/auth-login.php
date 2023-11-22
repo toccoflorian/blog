@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <h1>Connexion</h1>
 
-                <form action="/app/auth-login.php" method="POST">
+                <form action="/blog/auth-login.php" method="POST">
 
                     <!-- email -->
                     <div class="form-control">
